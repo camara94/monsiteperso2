@@ -1,0 +1,232 @@
+<div class="noresponse">
+  <div class="container" fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+    <div fxFlex="100">
+      <div>
+        <h3>{{'Mes Parcours de formation en ligne' | uppercase}}</h3>
+        <hr>
+      </div>
+    </div>
+
+
+    <div fxFlex=100 fxLayoutAlign.gt-md="space-around center">
+      <mat-card *ngIf="parcours != null" fxFlex="48" [@expand]>
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>
+            <h3>{{parcours[0].titre | uppercase}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{ parcours[0]['url'] }}" alt="{{ parcours[0]['auteur']}}">
+        <mat-card-content>
+          <h3>Description</h3>
+          <p>{{ parcours[0]['description']}}
+          </p>
+          <h4> Date d'obtention: {{parcours[0].date | date}} </h4>
+        </mat-card-content>
+      </mat-card>
+      <div [hidden]="parcours || pacoursErrMess">
+        <mat-spinner></mat-spinner>
+        <h4>Loading . . . Please Wait</h4>
+      </div>
+      <div *ngIf="pacoursErrMess">
+        <h2>Error</h2>
+        <h4>{{pacoursErrMess}}</h4>
+      </div>
+
+      <mat-card *ngIf=" parcours" fxFlex="48" [@expand]>
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>
+            <h3>{{ parcours[1].titre|uppercase}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{  parcours[1]['url'] }}" alt="{{ parcours[0]['auteur']}}">
+        <mat-card-content>
+          <h3>Description</h3>
+          <p>{{ parcours[1].description}}
+          </p>
+          <h4> Date d'obtention: {{parcours[1].date | date}} </h4>
+        </mat-card-content>
+      </mat-card>
+      <div [hidden]=" parcours || promoErrMess">
+        <mat-spinner></mat-spinner>
+        <h4>Loading . . . Please Wait</h4>
+      </div>
+      <div *ngIf="pacoursErrMess">
+        <h2>Error</h2>
+        <h4>{{pacoursErrMess}}</h4>
+      </div>
+    </div>
+    <div fxFlex fxLayoutAlign.gt-md="space-around center">
+      <mat-card *ngIf=" parcours" fxFlex="48" [@expand]>
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>
+            <h3>{{ parcours[3].titre | uppercase}} </h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{  parcours[3].url }}" alt="{{ parcours[3]._id}}">
+        <mat-card-content>
+          <h3>Description</h3>
+          <p>{{ parcours[3].description}}
+          </p>
+          <h4> Date d'obtention: {{parcours[3].date | date}} </h4>
+        </mat-card-content>
+      </mat-card>
+      <div [hidden]=" parcours || pacoursErrMess">
+        <mat-spinner></mat-spinner>
+        <h4>Loading . . . Please Wait</h4>
+      </div>
+      <div *ngIf="pacoursErrMess">
+        <h2>Error</h2>
+        <h4>{{pacoursErrMess}}</h4>
+      </div>
+
+
+      <mat-card *ngIf=" parcours" fxFlex="48" [@expand]>
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>
+            <h3>{{ parcours[2].titre | uppercase}} </h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{  parcours[2].url }}" alt="{{ parcours[2]._id}}">
+        <mat-card-content>
+          <h3>Description</h3>
+          <p>{{ parcours[2].description}}
+          </p>
+          <h4> Date d'obtention: {{parcours[2].date | date}} </h4>
+        </mat-card-content>
+      </mat-card>
+      <div [hidden]=" parcours || pacoursErrMess">
+        <mat-spinner></mat-spinner>
+        <h4>Loading . . . Please Wait</h4>
+      </div>
+      <div *ngIf="pacoursErrMess">
+        <h2>Error</h2>
+        <h4>{{pacoursErrMess}}</h4>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  <div class="response">
+    <div class="container" fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"
+      fxLayoutAlign.gt-md="space-around" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+      <div fxFlex="100">
+        <div>
+          <h3>{{'Mes Parcours de formation en ligne' | uppercase}}</h3>
+          <hr>
+        </div>
+      </div>
+
+
+
+        <mat-card *ngIf="parcours != null" fxFlex [@expand]>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              <h3>{{parcours[0].titre | uppercase}}</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{ parcours[0]['url'] }}" alt="{{ parcours[0]['auteur']}}">
+          <mat-card-content>
+            <h3>Description</h3>
+            <p>{{ parcours[0]['description']}}
+            </p>
+            <h4> Date d'obtention: {{parcours[0].date | date}} </h4>
+          </mat-card-content>
+        </mat-card>
+        <div [hidden]="parcours || pacoursErrMess">
+          <mat-spinner></mat-spinner>
+          <h4>Loading . . . Please Wait</h4>
+        </div>
+        <div *ngIf="pacoursErrMess">
+          <h2>Error</h2>
+          <h4>{{pacoursErrMess}}</h4>
+        </div>
+
+        <mat-card *ngIf=" parcours" fxFlex [@expand]>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              <h3>{{ parcours[1].titre|uppercase}}</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{  parcours[1]['url'] }}" alt="{{ parcours[0]['auteur']}}">
+          <mat-card-content>
+            <h3>Description</h3>
+            <p>{{ parcours[1].description}}
+            </p>
+            <h4> Date d'obtention: {{parcours[1].date | date}} </h4>
+          </mat-card-content>
+        </mat-card>
+        <div [hidden]=" parcours || promoErrMess">
+          <mat-spinner></mat-spinner>
+          <h4>Loading . . . Please Wait</h4>
+        </div>
+        <div *ngIf="pacoursErrMess">
+          <h2>Error</h2>
+          <h4>{{pacoursErrMess}}</h4>
+        </div>
+
+
+        <mat-card *ngIf=" parcours" fxFlex [@expand]>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              <h3>{{ parcours[3].titre | uppercase}} </h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{  parcours[3].url }}" alt="{{ parcours[3]._id}}">
+          <mat-card-content>
+            <h3>Description</h3>
+            <p>{{ parcours[3].description}}
+            </p>
+            <h4> Date d'obtention: {{parcours[3].date | date}} </h4>
+          </mat-card-content>
+        </mat-card>
+        <div [hidden]=" parcours || pacoursErrMess">
+          <mat-spinner></mat-spinner>
+          <h4>Loading . . . Please Wait</h4>
+        </div>
+        <div *ngIf="pacoursErrMess">
+          <h2>Error</h2>
+          <h4>{{pacoursErrMess}}</h4>
+        </div>
+
+
+        <mat-card *ngIf=" parcours" fxFlex [@expand]>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              <h3>{{ parcours[2].titre | uppercase}} </h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{  parcours[2].url }}" alt="{{ parcours[2]._id}}">
+          <mat-card-content>
+            <h3>Description</h3>
+            <p>{{ parcours[2].description}}
+            </p>
+            <h4> Date d'obtention: {{parcours[2].date | date}} </h4>
+          </mat-card-content>
+        </mat-card>
+        <div [hidden]=" parcours || pacoursErrMess">
+          <mat-spinner></mat-spinner>
+          <h4>Loading . . . Please Wait</h4>
+        </div>
+        <div *ngIf="pacoursErrMess">
+          <h2>Error</h2>
+          <h4>{{pacoursErrMess}}</h4>
+        </div>
+      </div>
+    </div>
+
+

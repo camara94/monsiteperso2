@@ -1,0 +1,75 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+        <h3>Apropos de moi</h3>
+        <hr>
+    </div>
+  </div>
+
+  <div *ngIf="apropos !== null">
+    <div fxLayout="column" fxLayout.gt-sm="row" >
+      <div fxFlex="70">
+        <h2 class="qui">Qui suis-je ?</h2>
+        <p style="text-align: justify; padding: 10px;"> {{ apropos[0].presentation  }} </p>
+        <mat-card>
+          <blockquote>
+            <h3>L’excellence est un art que l’on n’atteint que par l’exercice constant.
+              Nous sommes ce que nous faisons de manière répétée. L’excellence n’est donc pas une action mais une habitude..</h3>
+            <footer>-- Aristote,
+              <cite>Références de Aristote - Biographie de Aristote,
+                Ajouter à mon carnet de citations</cite>
+            </footer>
+          </blockquote>
+        </mat-card>
+      </div>
+      <div fxFlex="30" style="height: 100%;">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+            <h2 class="qui">{{apropos[0].nom + ' ' + apropos[0].prenom}} </h2>
+            </mat-card-title>
+          </mat-card-header>
+          <div class="embed-responsive embed-responsive-16by9" style="width: 100%;">
+            <iframe style="width: 100%;" class="embed-responsive-item" src="./../../assets/presentationsite.mp4" ></iframe>
+        </div>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item *ngFor="let fonction of apropos[0].fonction">
+                <p matLine> {{fonction}} </p>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-card>
+
+        <h2>Me retrouver sur:</h2>
+        <div fxFlex="100" fxFlex.gt-sm="45">
+          <div style="text-align:center">
+            <a mat-icon-button class="btn-github" href="{{ apropos[0].link[2] }}" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+                <a mat-icon-button class="btn-codepen" href="{{apropos[0].link[0]}}" target="_blank"><i class="fa fa-codepen fa-lg"> </i></a>
+                <a mat-icon-button class="btn-linkedin" href="{{apropos[0].link[3]}}" target="_blank"><i class="fa fa-linkedin fa-lg"></i> </a>
+                <a mat-icon-button class="btn-twitter" href="{{apropos[0].link[4]}}" target="_blank"><i class="fa fa-twitter fa-lg"></i> </a>
+                <a mat-icon-button class="btn-youtube" href="{{apropos[0].link[5]}}" target="_blank"><i class="fa fa-youtube fa-lg"></i> </a>
+                <a mat-icon-button class="btn-mail" href="{{'mailto:' + apropos[0].email}}" target="_blank" ><i class="fa fa-envelope-o fa-lg"></i></a>
+            </div>
+          </div>
+    </mat-card>
+  </div>
+</div>
+<div [hidden]="apropos || errMess">
+  <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+</div>
+
+
+<div *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
+</div>

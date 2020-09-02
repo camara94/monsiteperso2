@@ -1,0 +1,78 @@
+<div class="container"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayout.xs="column"
+  fxLayout="column"
+  fxLayoutGap="5px">
+<mat-card  *ngFor="let projet of projets"  fxFlex [@expand]>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h2>{{projet.project_name}}</h2>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-carousel
+  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  color="accent"
+  maxWidth="auto"
+  proportion="30"
+  slides="5"
+  [loop]="true"
+  [hideArrows]="false"
+  [hideIndicators]="false"
+  [useKeyboard]="true"
+  [useMouseWheel]="false"
+  orientation="ltr"
+>
+  <mat-carousel-slide
+    #matCarouselSlide
+    *ngFor="let slide of projet.image_urls; let i = index"
+    [image]="slide"
+    overlayColor="#00000040"
+    [hideOverlay]="true"
+  >
+    <div
+      style="width: 50%; height: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center"
+    >
+        <a class="btn-github" href="{{ projet.live_link  }}" target="_blank">  <button
+          mat-button
+          mat-raised-button
+          mat-flat-button
+          mat-stroked-button
+          >Voir le projet en live</button></a>
+
+          <a class="btn-github" href="{{ projet.github_link  }}" target="_blank">  <button
+            mat-button
+            mat-raised-button
+
+            >Voir le code source </button></a>
+    </div>
+  </mat-carousel-slide>
+</mat-carousel>
+
+  <mat-card-content>
+    <br>
+    <p> {{projet.description}} </p>
+    <h3>Les technologies utilisées: </h3>
+    <p>
+
+        <button *ngFor="let techno of projet.technologies; let index = index" mat-raised-button matBadge="{{(index+1)}}">
+          {{techno}}
+      </button>
+   </p>
+  </mat-card-content>
+
+
+</mat-card>
+
+<div [hidden]="projets || projetError">
+  <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+</div>
+
+<div *ngIf="projetError">
+  <h2>Error</h2>
+  <h4>{{projetError}}</h4>
+</div>

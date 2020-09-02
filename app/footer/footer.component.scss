@@ -1,0 +1,23 @@
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.footer{
+    background-color: #C2185B;
+    @include zero-margin(10px, 0px);
+}
+
+.btn-codepen {color:#fff!important; background-color:#3b5998!important; margin: 3px;}
+.btn-github{color:#fff!important;background-color:#000!important;  margin: 3px;}
+.btn-youtube{color:#fff!important;background-color:#ff4b39!important;  margin: 3px;}
+.btn-linkedin{color:#fff!important;background-color:#007bb6!important;  margin: 3px;}
+.btn-twitter{color:#fff!important;background-color:#55acee!important;  margin: 3px;}
+.btn-mail{color:#fff!important;background-color:#512DA8!important; margin: 3px;}
+.btn-image { margin-right:  6px; }
+.blanc {color:#fff!important;}

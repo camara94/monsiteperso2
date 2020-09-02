@@ -1,0 +1,54 @@
+<!--<app-header></app-header>-->
+<div>
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <a mat-button class="companyName" routerLink="/">
+      <span><img src="/assets/logo/android-icon-192x192trans.png" height="50" width="50"></span>
+
+    </a>
+    <a (click)="sidenav.close()" mat-button  routerLinkActive="active">
+      <a mat-button routerLink="/home"><span *ngIf="username ==null">Laby Damaro</span></a>
+      <a *ngIf="username">{{username}}</a>
+    </a>
+    <a><span class="example-spacer"></span></a>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a (click)="sidenav.close()" mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span><span class="masquer"> Acceuil</span></a>
+      <a mat-button routerLink="/aboutus" routerLinkActive="active"><span class="fa fa-info fa-lg"></span><span class="masquer"> Apropos</span></a>
+      <a mat-button routerLink="/certificats" routerLinkActive="active"><span class="fa fa-certificate fa-lg"></span><span class="masquer"> Certificat</span></a>
+      <a mat-button routerLink="/portefolio" routerLinkActive="active"><i class="fa fa-tasks fa-lg"></i><span class="masquer"> Portefolio</span></a>
+      <a mat-button routerLink="/contactus" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span><span class="masquer cam"> Contact</span></a>
+      <div class="cacher">
+        <span class="flex-spacer"></span>
+      <a *ngIf="!username" mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> <span class="masquer"> Login</span></a>
+      <a *ngIf="username" mat-button (click)="logOut()"><span class="fa fa-sign-out fa-lg"></span> <span class="masquer"> Logout</span></a>
+      </div>
+    </div>
+
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"  ></span><span class="masquer"> Acceuil</span></a>
+        <a mat-button routerLink="/aboutus" routerLinkActive="active"><span class="fa fa-info fa-lg"></span><span class="masquer"> Apropos</span></a>
+        <a mat-button routerLink="/certificats" routerLinkActive="active"><span class="fa fa-certificate fa-lg"></span><span class="masquer"> Certificat</span></a>
+        <a mat-button routerLink="/portefolio" routerLinkActive="active"><i class="fa fa-tasks fa-lg"></i><span class="masquer"> Portefolio</span></a>
+        <a mat-button routerLink="/contactus" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span><span class="masquer"> Contact</span></a>
+        <div class="cacher">
+          <span class="flex-spacer cam"></span>
+        <a *ngIf="!username" mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> <span class="masquer"> Login</span></a>
+        <a *ngIf="username" mat-button (click)="logOut()"><span class="fa fa-sign-out fa-lg"></span> <span class="masquer"> Logout</span></a>
+        </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexEmpty>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<app-footer></app-footer>

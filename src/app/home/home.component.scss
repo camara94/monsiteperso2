@@ -1,0 +1,21 @@
+
+ .noresponse {
+  display: inline-block;
+}
+
+.response {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: .8rem;
+  }
+  .noresponse {
+    display: none;
+  }
+
+  .response {
+    display: inline-block;
+  }
+ }

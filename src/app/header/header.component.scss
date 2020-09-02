@@ -1,0 +1,81 @@
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+$background-moredark: #4527A0;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background: $background-light ;
+    color:floralwhite;
+    min-height: 150px;
+}
+.active {
+    background: $background-moredark;
+}
+
+@media (max-width: 767px) {
+ .masquer{
+    display: none;
+  }
+  a {
+    display: inline-block;
+    margin: 1px;
+    width: 5px;
+    padding: 0;
+  }
+  .mat-toolbar{
+    width: 100%;
+  }
+
+}
+
+
+/* Menu responsive */
+
+.companyName{
+  font-size: 150%;
+}
+
+.mat-toolbar{
+height: 7vh;
+}
+
+div {
+  overflow: inherit;
+}
+
+.mat-sidenav-container{
+background-color: lightskyblue;
+min-height: 93vh !important;
+z-index: 15;
+}
+
+a{
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
+}
+
+button{
+  font-size: 110%;
+  min-width: min-content;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-sidenav-content{
+    font-size: 200%;
+    text-align: center;
+}

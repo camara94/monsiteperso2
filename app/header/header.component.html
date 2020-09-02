@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span><img src="/assets/logo/android-icon-192x192trans.png" height="80" width="80"></span>
+  <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span><span class="masquer"> Acceuil</span></a>
+  <a mat-button routerLink="/aboutus" routerLinkActive="active"><span class="fa fa-info fa-lg"></span><span class="masquer"> Apropos</span></a>
+  <a mat-button routerLink="/certificats" routerLinkActive="active"><span class="fa fa-certificate fa-lg"></span><span class="masquer"> Certificat</span></a>
+  <a mat-button routerLink="/portefolio" routerLinkActive="active"><i class="fa fa-tasks fa-lg"></i><span class="masquer"> Portefolio</span></a>
+  <a mat-button routerLink="/contactus" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span><span class="masquer"> Contact</span></a>
+  <span class="flex-spacer"></span>
+  <a *ngIf="!username" mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> <span class="masquer"> Login</span></a>
+  <a *ngIf="username">{{username}}</a>
+  <a *ngIf="username" mat-button (click)="logOut()"><span class="fa fa-sign-out fa-lg"></span> <span class="masquer"> Logout</span></a>
+</mat-toolbar>  
+
+<!--div class="container jumbotron"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center"
+    fxLayoutAlign.gt-sm="center center"
+    fxLayoutGap="10px">
+
+  <div fxFlex fxFlex.gt-sm="50%">
+    <h1>Camara kills</h1>
+    <p>La révolution informatique fait gagner un temps fou aux hommes, mais ils le passent avec leur ordinateur !”
+    </p>
+  </div>
+  <div fxFlex fxFlex.gt-sm="20%">
+    <img src="/assets/logo/android-icon-192x192trans.png" alt="Logo">
+  </div>
+  <div fxFlex></div>
+</div -->

@@ -1,0 +1,39 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px ">
+
+  <div fxFlex style="margin-bottom: 10px;">
+    <div>
+        <h3>Contactez-moi</h3>
+        <hr style="width: 35%; float: left;">
+    </div>
+  </div>
+
+  <div fxFlex style="margin: 20px;">
+    <h3>Localisation Géographique</h3>
+    <div fxLayout="column"  fxLayout.gt-sm="row">
+      <div fxFlex="20" fxFlexOffset="10px">
+          <h4>Mon adresse</h4>
+          <address style="text-size: 80%">
+            {{apropos[0].adresse[0]}}<br> {{apropos[0].adresse[1]}}<br>  {{apropos[0].adresse[2]}}<br>
+            <i class="fa fa-phone"></i>:  {{apropos[0].phones[0]}}<br>
+            <i class="fa fa-fax"></i>: {{apropos[0].phones[1]}}<br>
+            <i class="fa fa-envelope"></i>:
+            <a href="'mailto:' + {{apropos[0].email}}">{{apropos[0].email}}</a>
+          </address>
+        <p></p>
+        <div>
+          <a mat-raised-button href="'tel:'+ {{apropos[0].phones[0]}}"><i class="fa fa-phone"></i> Call</a>
+          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
+          <a mat-raised-button href="'mailto:'+ {{apropos[0].phones[0] }}"><i class="fa fa-envelope-o"></i> Email</a>
+        </div>
+     </div>
+
+     <div class="map-container">
+      <div class="map-frame">
+        <div id="map" class="mean"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

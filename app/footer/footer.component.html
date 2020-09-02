@@ -1,0 +1,46 @@
+<div class="container-fluid footer primary"
+    fxLayout="row wrap"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px">
+
+  <div fxFlex="100" fxFlex.gt-sm="50">
+    <div fxLayout="row">
+      <div fxFlex="40" fxFlexOffset="20px">
+        <h4 class="blanc">Liens</h4>
+        <mat-list>
+          <mat-list-item><a mat-button routerLink="/home">Accuei</a></mat-list-item>
+          <mat-list-item><a mat-button routerLink="/aboutus">Apropos</a></mat-list-item>
+          <mat-list-item><a mat-button routerLink="/certificats">Certificat</a></mat-list-item>
+          <mat-list-item><a mat-button routerLink="/contactus">Contact</a></mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="55">
+        <h4 class="blanc">Mon adresse</h4>
+        <address class="blanc" style="text-size: 80%">
+          {{apropos[0].adresse[0]}}<br> {{apropos[0].adresse[1]}}<br>  {{apropos[0].adresse[2]}}<br>
+          <i class="fa fa-phone blanc"></i>:  {{apropos[0].phones[0]}}<br>
+          <i class="fa fa-fax blanc"></i>: {{apropos[0].phones[1]}}<br>
+          <i class="fa fa-envelope blanc"></i>:
+          <a class="blanc" href="mailto:+ {{apropos[0].email}}">{{apropos[0].email}}</a>
+        </address>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="45">
+    <div style="text-align:center">
+      <a href="https://play.google.com/store/apps/details?id=com.camaratek.camara_skills&fbclid=IwAR20FyobI8yGXoBlCYXJD5nMuj5QcWeBed_FThG26NSROaHOL3nAVLu0nrc" target="_blank" class="btn-image">
+        <img class="btn-image" src="{{apropos[0].logoandroid}}" alt="{{apropos[0].email}}" width="120" />
+      </a>
+      <a mat-icon-button class="btn-github" href="{{ apropos[0].link[2] }}" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+          <a mat-icon-button class="btn-codepen" href="{{apropos[0].link[0]}}" target="_blank"><i class="fa fa-codepen fa-lg"> </i></a>
+          <a mat-icon-button class="btn-linkedin" href="{{apropos[0].link[3]}}" target="_blank"><i class="fa fa-linkedin fa-lg"></i> </a>
+          <a mat-icon-button class="btn-twitter" href="{{apropos[0].link[4]}}" target="_blank"><i class="fa fa-twitter fa-lg"></i> </a>
+          <a mat-icon-button class="btn-youtube" href="{{apropos[0].link[5]}}" target="_blank"><i class="fa fa-youtube fa-lg"></i> </a>
+          <a mat-icon-button class="btn-mail" href="{{'mailto:' + apropos[0].email}}" target="_blank" ><i class="fa fa-envelope-o fa-lg btn-logo"></i></a>
+    </div>
+  </div>
+  <div>
+      <p class="blanc">© Copyright {{year}} Laby Damaro Camara</p>
+  </div>
+</div>
